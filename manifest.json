@@ -6,7 +6,20 @@
     "content_scripts": [
         {
             "css": ["style.css"],
+            "js": ["style.js"],
             "matches": ["https://ninova.itu.edu.tr/*"]
         }
-    ]
+    ],
+    "options_ui": {
+        "chrome_style": true,
+        "open_in_tab": false,
+        "page": "settings.html"
+    },
+    "permissions": ["storage"],
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "background.js"
+        ]
+    }
 }
