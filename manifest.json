@@ -1,0 +1,12 @@
+{
+    "name": "Ninova Beautifier",
+    "description": "Minimal design for Ninova",
+    "manifest_version": 2,
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "css": ["style.css"],
+            "matches": ["https://ninova.itu.edu.tr/*"]
+        }
+    ]
+}

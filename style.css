@@ -1,0 +1,125 @@
+body{
+    background: unset !important;
+    background-image: url("https://i.redd.it/0wer8wzwkua61.png") !important;
+    background-attachment: fixed !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
+}
+.tepe{
+    background: unset !important;
+}
+.menu a{
+    background: unset !important;
+    background-color: rgba(40, 40, 40, .5) !important;
+}
+.menu a .selected{
+    background: unset !important;
+    background-color: rgba(40, 40, 40, 1) !important;
+}
+.icerik{
+    background-color: rgba(40, 40, 40, .5) !important;
+    color: dodgerblue !important;
+}
+.alt{
+    background: unset !important;
+}
+.yol{
+    background: unset !important;
+    background-color: black !important;
+}
+.tdSag{
+    background: unset !important;
+}
+.tdSol{
+    background: unset !important;
+}
+.sol{
+    background: unset !important;
+    background-color: unset !important;
+}
+.sag{
+    background: unset !important;
+    background-color: unset !important;
+}
+.orta{
+    background-color: rgba(40, 40, 40, .30) !important;
+}
+.panoElemani{
+    background: unset !important;
+    border: 2px solid white !important;
+}
+p, h1, h2, h3, h4, h5, h6, strong, span, #text{
+    color: white !important;
+}
+.data td , .data th{
+    background-color: unset !important;
+}
+th{
+    color: coral !important;
+}
+a{
+    color: crimson !important;
+}
+.tepe a:hover{
+    color: blueviolet !important;
+}
+.ic > img{
+    opacity: 0% !important;
+}
+.bidb{
+    opacity: 0% !important;
+}
+#aspnetForm > div.tasiyici > div.icerik > div.orta > div > div.dosyaSistemi > div:nth-child(2){
+    background-color: unset !important;
+}
+.menuErisimAgaci span:hover{
+    color: dodgerblue !important;
+}
+.prototip_StemImage, .toolbar, .content{
+    background: unset !important;
+}
+.prototip_CornerWrapper.prototip_CornerWrapperTopLeft, .prototip_BetweenCorners, .borderBottom, .cornerCanvasTr{
+    opacity: 0% !important;
+}
+.borderMiddle{
+    background-color: dodgerblue !important;
+}
+a.buton{
+    background: unset !important;
+    background-color: blueviolet !important;
+    padding: 2px !important;
+}
+a.buton > span {
+    background: unset !important;
+}
+a.buton:hover{
+    background-color: coral !important;
+}
+.tepe > .menu > div:hover{
+    background-color: rgba(40, 40, 40, .8) !important;
+}
+.bilgiKayit{
+    background-color: unset !important;
+}
+#ctl00_ContentPlaceHolder1_gvGecmisMeetings > tbody > tr > td > div{
+    border: 2px solid white !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+.orta .ic table.data > tbody > tr > th{
+    border-bottom: 1px solid white !important;
+    border-top:  1px solid white !important;
+}
+.orta .ic table.data > tbody > tr > td {
+    border-bottom: 1px solid white !important;
+    color: #a0a0a0 !important;
+}
+.yolAna{
+    background: unset !important;
+    background-color: rgba(40, 40, 40, .5);
+}
+#ctl00_ContentPlaceHolder1_gvOdevDosyaTipleri_ctl02_fuUpload{
+    border: none !important;
+    background: unset !important;
+}
