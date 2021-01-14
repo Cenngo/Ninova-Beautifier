@@ -1,12 +1,14 @@
+/* Remove default background */
+.alt, .tepe, .tdSag, .tdSol, .sol, .sag, .data td , .data th, a.buton > span{
+    background: unset !important;
+    background-color: unset !important;
+}
 body{
     background: unset !important;
     background-attachment: fixed !important;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
-}
-.tepe{
-    background: unset !important;
 }
 .menu a{
     background: unset !important;
@@ -20,26 +22,9 @@ body{
     background-color: rgba(40, 40, 40, var(--opacity)) !important;
     color: var(--accent) !important;
 }
-.alt{
-    background: unset !important;
-}
 .yol{
     background: unset !important;
     background-color: black !important;
-}
-.tdSag{
-    background: unset !important;
-}
-.tdSol{
-    background: unset !important;
-}
-.sol{
-    background: unset !important;
-    background-color: unset !important;
-}
-.sag{
-    background: unset !important;
-    background-color: unset !important;
 }
 .orta{
     background-color: rgba(40, 40, 40, var(--opacity)) !important;
@@ -50,9 +35,6 @@ body{
 }
 p, h1, h2, h3, h4, h5, h6, strong, span, #text{
     color: var(--textColor) !important;
-}
-.data td , .data th{
-    background-color: unset !important;
 }
 th{
     color: var(--headerColor) !important;
@@ -88,9 +70,6 @@ a.buton{
     background: unset !important;
     background-color: var(--secondary) !important;
     padding: 2px !important;
-}
-a.buton > span {
-    background: unset !important;
 }
 a.buton:hover{
     background-color: var(--headerColor) !important;
