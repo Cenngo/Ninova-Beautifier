@@ -2,11 +2,33 @@
     "name": "Ninova Beautifier",
     "description": "Minimal design for Ninova",
     "manifest_version": 2,
-    "version": "1.0",
+    "author": "Cenk Ergen",
+    "version": "1.3",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
     "content_scripts": [
         {
             "css": ["style.css"],
-            "matches": ["https://ninova.itu.edu.tr/*"]
+            "js": ["style.js"],
+            "matches": ["https://ninova.itu.edu.tr/*"],
+            "match_about_blank": false,
+            "run_at": "document_end"
         }
-    ]
+    ],
+    "options_ui": {
+        "chrome_style": true,
+        "open_in_tab": false,
+        "page": "settings/settings.html"
+    },
+    "permissions": ["storage", "contextMenus"],
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "offline_enabled": false
 }

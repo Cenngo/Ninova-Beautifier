@@ -1,68 +1,49 @@
+/* Remove default background */
+.alt, .tepe, .tdSag, .tdSol, .sol, .sag, .data td , .data th, a.buton > span{
+    background: unset !important;
+    background-color: unset !important;
+}
 body{
     background: unset !important;
-    background-image: url("https://i.redd.it/0wer8wzwkua61.png") !important;
     background-attachment: fixed !important;
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
 }
-.tepe{
-    background: unset !important;
-}
 .menu a{
     background: unset !important;
-    background-color: rgba(40, 40, 40, .5) !important;
+    background-color: rgba(40, 40, 40, var(--opacity)) !important;
 }
 .menu a .selected{
     background: unset !important;
     background-color: rgba(40, 40, 40, 1) !important;
 }
 .icerik{
-    background-color: rgba(40, 40, 40, .5) !important;
-    color: dodgerblue !important;
-}
-.alt{
-    background: unset !important;
+    background-color: rgba(40, 40, 40, var(--opacity)) !important;
+    color: var(--accent) !important;
 }
 .yol{
     background: unset !important;
     background-color: black !important;
 }
-.tdSag{
-    background: unset !important;
-}
-.tdSol{
-    background: unset !important;
-}
-.sol{
-    background: unset !important;
-    background-color: unset !important;
-}
-.sag{
-    background: unset !important;
-    background-color: unset !important;
-}
 .orta{
-    background-color: rgba(40, 40, 40, .30) !important;
+    background-color: rgba(40, 40, 40, var(--opacity)) !important;
 }
 .panoElemani{
     background: unset !important;
-    border: 2px solid white !important;
+    border: 2px solid var(--mainColor) !important;
 }
 p, h1, h2, h3, h4, h5, h6, strong, span, #text{
-    color: white !important;
-}
-.data td , .data th{
-    background-color: unset !important;
+    color: var(--textColor) !important;
 }
 th{
-    color: coral !important;
+    color: var(--headerColor) !important;
 }
 a{
-    color: crimson !important;
+    color: var(--hyperlinkColor) !important;
 }
 .tepe a:hover{
-    color: blueviolet !important;
+    color: var(--secondary) !important;
 }
 .ic > img{
     opacity: 0% !important;
@@ -74,7 +55,7 @@ a{
     background-color: unset !important;
 }
 .menuErisimAgaci span:hover{
-    color: dodgerblue !important;
+    color: var(--accent) !important;
 }
 .prototip_StemImage, .toolbar, .content{
     background: unset !important;
@@ -83,18 +64,15 @@ a{
     opacity: 0% !important;
 }
 .borderMiddle{
-    background-color: dodgerblue !important;
+    background-color: var(--accent) !important;
 }
 a.buton{
     background: unset !important;
-    background-color: blueviolet !important;
+    background-color: var(--secondary) !important;
     padding: 2px !important;
 }
-a.buton > span {
-    background: unset !important;
-}
 a.buton:hover{
-    background-color: coral !important;
+    background-color: var(--headerColor) !important;
 }
 .tepe > .menu > div:hover{
     background-color: rgba(40, 40, 40, .8) !important;
@@ -103,21 +81,21 @@ a.buton:hover{
     background-color: unset !important;
 }
 #ctl00_ContentPlaceHolder1_gvGecmisMeetings > tbody > tr > td > div{
-    border: 2px solid white !important;
+    border: 2px solid var(--mainColor) !important;
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
 }
 .orta .ic table.data > tbody > tr > th{
-    border-bottom: 1px solid white !important;
-    border-top:  1px solid white !important;
+    border-bottom: 1px solid var(--mainColor) !important;
+    border-top:  1px solid var(--mainColor) !important;
 }
 .orta .ic table.data > tbody > tr > td {
-    border-bottom: 1px solid white !important;
+    border-bottom: 1px solid var(--mainColor) !important;
     color: #a0a0a0 !important;
 }
 .yolAna{
     background: unset !important;
-    background-color: rgba(40, 40, 40, .5);
+    background-color: rgba(40, 40, 40, var(--opacity));
 }
 #ctl00_ContentPlaceHolder1_gvOdevDosyaTipleri_ctl02_fuUpload{
     border: none !important;

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        li{
+            padding: 10px 0 10px 0;
+            margin: 5px 0 5px 0;
+        }
+        input{
+            float: right;
+            margin-top: -6px;
+        }
+    </style>
+</head>
+<body>
+    <ul style="list-style:none;">
+        <li>
+            <strong>Background Image</strong>
+            <input type="text" id="bgImg">
+        </li>
+        <li>
+            <strong>Page Opacity</strong>
+            <input type="range" min="1" max="100" value="50" id="opacity">
+        </li>
+        <li>
+            <strong>Hyperlink Color</strong>
+            <input type="color" id="hlColor">
+        </li>
+        <li>
+            <strong>Main Text Color</strong>
+            <input type="color" id="mainColor">
+        </li>
+        <li>
+            <strong>Text Color</strong>
+            <input type="color" id="textColor">
+        </li>
+        <li>
+            <strong>Table Header Color</strong>
+            <input type="color" id="headerColor">
+        </li>
+        <li>
+            <strong>Primary Accent Color</strong>
+            <input type="color" id="accentColor">
+        </li>
+        <li>
+            <strong>Secondary Accent Color</strong>
+            <input type="color" id="accentSecColor">
+        </li>
+    </ul>
+    
+    <script type="module" src="settings.js"></script>
+</body>
