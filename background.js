@@ -1,3 +1,4 @@
+'use strict';
 chrome.runtime.onInstalled.addListener(function(details){
     injectDefaults();
 
@@ -9,12 +10,18 @@ chrome.runtime.onInstalled.addListener(function(details){
         title: "Customize Page",
         type: 'normal',
         visible:true
-    }, () => {
-        chrome.contextMenus.onClicked.addListener(handleContext);
+    });
+
+    chrome.tabs.create({
+        active:true,
+        url: "https://github.com/Cenngo/Ninova-Beautifier/wiki/Getting-Started"
     });
 });
 
+chrome.contextMenus.onClicked.addListener(handleContext);
+
 function handleContext(info, tab){
+    console.log(`Context Menu Clicked: ${info.menuItemId}`);
     switch (info.menuItemId) {
         case "optns":
             chrome.runtime.openOptionsPage();
@@ -36,7 +43,6 @@ function injectDefaults(){
         accent: "#1e90ff",
         accentS: "#8a2be2"
     },function(){
-        return true;
+        console.log("Successfully injected default options.");
     });
-    return false;
 }

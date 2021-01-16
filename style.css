@@ -68,11 +68,11 @@ a{
 }
 a.buton{
     background: unset !important;
-    background-color: var(--secondary) !important;
+    background-color: var(--aceent) !important;
     padding: 2px !important;
 }
 a.buton:hover{
-    background-color: var(--headerColor) !important;
+    background-color: var(--secondary) !important;
 }
 .tepe > .menu > div:hover{
     background-color: rgba(40, 40, 40, .8) !important;
@@ -100,4 +100,7 @@ a.buton:hover{
 #ctl00_ContentPlaceHolder1_gvOdevDosyaTipleri_ctl02_fuUpload{
     border: none !important;
     background: unset !important;
+}
+#ctl00_ContentPlaceHolder1_gvMeetingList > tbody > tr > td > div{
+    box-shadow: none !important;
 }
