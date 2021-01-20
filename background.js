@@ -1,6 +1,9 @@
 'use strict';
+
 chrome.runtime.onInstalled.addListener(function(details){
-    injectDefaults();
+    if(details.reason == "install"){
+        injectDefaults();
+    }
 
     chrome.contextMenus.create({
         contexts: ['page'],
@@ -36,6 +39,7 @@ function injectDefaults(){
     chrome.storage.local.set({
         bgImg: "https://external-preview.redd.it/sE0hV3Uv1HO_sUtL9JWe1iqJNm7m4T0RtZ3vQQuBilA.jpg?auto=webp&s=da6a6333d3273ddbea5692e473bdac7cdcbd7e28",
         opacity: 50,
+        bgColor:"#282828",
         hlColor: "#dc143c",
         textColor: "#ffffff",
         mainColor: "#ffffff",
