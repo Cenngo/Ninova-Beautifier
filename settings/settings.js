@@ -1,3 +1,4 @@
+'use strict';
 const bg = document.getElementById('bgImg');
 const opacity = document.getElementById('opacity');
 const hlColor = document.getElementById('hlColor');
@@ -6,11 +7,15 @@ const textColor = document.getElementById('textColor');
 const headerColor = document.getElementById('headerColor');
 const accent = document.getElementById('accentColor');
 const accentSecond = document.getElementById('accentSecColor');
+const bgColor = document.getElementById('bgColor');
+
+var storedVariables = ['bgImg', 'opacity', 'bgColor', 'hlColor', 'mainColor', 'textColor', 'headerColor', 'accent', 'accentS'];
 
 window.addEventListener("load", function(window, ev){
-    chrome.storage.local.get(['bgImg', 'opacity', 'hlColor', 'mainColor', 'textColor', 'headerColor', 'accent', 'accentS'], (result) =>{
+    chrome.storage.local.get(storedVariables, (result) =>{
         bg.value = result.bgImg;
         opacity.value = result.opacity;
+        bgColor.value = result.bgColor;
         hlColor.value = result.hlColor;
         mainColor.value = result.mainColor;
         textColor.value = result.textColor;
@@ -26,6 +31,10 @@ bg.addEventListener("change", (ev) =>{
 
 opacity.addEventListener("change", (ev) =>{
     save({opacity: ev.target.value});
+});
+
+bgColor.addEventListener("change", (ev)=>{
+    save({bgColor: ev.target.value});
 });
 
 hlColor.addEventListener("change", (ev) =>{
