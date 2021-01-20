@@ -6,20 +6,22 @@
 body{
     background: unset !important;
     background-attachment: fixed !important;
-    background-size: cover;
+    background-size: 100% !important;
     background-repeat: no-repeat;
+    background-color: black;
+    background-image: var(--background) !important;
     font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
 }
 .menu a{
     background: unset !important;
-    background-color: rgba(40, 40, 40, var(--opacity)) !important;
+    background-color: rgba(var(--bgR), var(--bgG), var(--bgB), var(--opacity)) !important;
 }
 .menu a .selected{
     background: unset !important;
-    background-color: rgba(40, 40, 40, 1) !important;
+    background-color: rgba(var(--bgR), var(--bgG), var(--bgB), 1) !important;
 }
 .icerik{
-    background-color: rgba(40, 40, 40, var(--opacity)) !important;
+    background-color: rgba(var(--bgR), var(--bgG), var(--bgB), var(--opacity)) !important;
     color: var(--accent) !important;
 }
 .yol{
@@ -27,7 +29,7 @@ body{
     background-color: black !important;
 }
 .orta{
-    background-color: rgba(40, 40, 40, var(--opacity)) !important;
+    background-color: rgba(var(--bgR), var(--bgG), var(--bgB), var(--opacity)) !important;
 }
 .panoElemani{
     background: unset !important;
@@ -68,14 +70,14 @@ a{
 }
 a.buton{
     background: unset !important;
-    background-color: var(--aceent) !important;
+    background-color: var(--accent) !important;
     padding: 2px !important;
 }
 a.buton:hover{
     background-color: var(--secondary) !important;
 }
 .tepe > .menu > div:hover{
-    background-color: rgba(40, 40, 40, .8) !important;
+    background-color: rgba(var(--bgR), var(--bgG), var(--bgB), .8) !important;
 }
 .bilgiKayit{
     background-color: unset !important;
@@ -95,7 +97,7 @@ a.buton:hover{
 }
 .yolAna{
     background: unset !important;
-    background-color: rgba(40, 40, 40, var(--opacity));
+    background-color: rgba(var(--bgR), var(--bgG), var(--bgB), var(--opacity));
 }
 #ctl00_ContentPlaceHolder1_gvOdevDosyaTipleri_ctl02_fuUpload{
     border: none !important;
@@ -103,4 +105,7 @@ a.buton:hover{
 }
 #ctl00_ContentPlaceHolder1_gvMeetingList > tbody > tr > td > div{
     box-shadow: none !important;
+}
+.closeVimeo{
+    color: black !important;
 }
