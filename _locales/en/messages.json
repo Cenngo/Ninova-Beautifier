@@ -1,0 +1,38 @@
+{
+    "bgImg":{
+        "message": "Background Image",
+        "description": "Image URL to be used as the background of the page"
+    },
+    "opacity":{
+        "message": "Page Opacity",
+        "description": "Background opacity of the page content"
+    },
+    "bgColor":{
+        "message": "Page Color",
+        "description": "Background color of the page content"
+    },
+    "hlColor":{
+        "message": "Hyperlink Color",
+        "description": "Color of the hyperlinks in the page"
+    },
+    "mainColor":{
+        "message": "Main Color",
+        "description": "Color used for bulk of the structural elements like: borders, seperators etc."
+    },
+    "textColor":{
+        "message": "Text Color",
+        "description": "Color of the texts"
+    },
+    "tHeaderColor":{
+        "message": "Table Header Color",
+        "description": "Color used for the headers of tabled content"
+    },
+    "accentColor":{
+        "message": "Accent Color",
+        "description" : "Primary accent color"
+    },
+    "secondaryAccenColor":{
+        "message": "Secondary Accent Color",
+        "description": "Secondary accent color"
+    }
+}

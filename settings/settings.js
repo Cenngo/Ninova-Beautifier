@@ -1,64 +1,74 @@
 'use strict';
-const bg = document.getElementById('bgImg');
-const opacity = document.getElementById('opacity');
-const hlColor = document.getElementById('hlColor');
-const mainColor = document.getElementById('mainColor');
-const textColor = document.getElementById('textColor');
-const headerColor = document.getElementById('headerColor');
-const accent = document.getElementById('accentColor');
-const accentSecond = document.getElementById('accentSecColor');
-const bgColor = document.getElementById('bgColor');
+const ex = document.getElementById('export');
+const im = document.getElementById('import');
 
-var storedVariables = ['bgImg', 'opacity', 'bgColor', 'hlColor', 'mainColor', 'textColor', 'headerColor', 'accent', 'accentS'];
+const storedVariables = ['bgImg', 'opacity', 'bgColor', 'hlColor', 'mainColor', 'textColor', 'headerColor', 'accent', 'accentS'];
 
 window.addEventListener("load", function(window, ev){
+    storedVariables.forEach(variable => {
+        var element = document.getElementById(variable);
+        element.addEventListener("change", function(ev){
+            save({
+                [variable]: ev.target.value
+            });
+        });
+    });
+
+    displayValues();
+});
+
+function displayValues(){
     chrome.storage.local.get(storedVariables, (result) =>{
-        bg.value = result.bgImg;
-        opacity.value = result.opacity;
-        bgColor.value = result.bgColor;
-        hlColor.value = result.hlColor;
-        mainColor.value = result.mainColor;
-        textColor.value = result.textColor;
-        headerColor.value = result.headerColor;
-        accent.value = result.accent;
-        accentSecond.value = result.accentS;
+        storedVariables.forEach(variable => {
+            var element = document.getElementById(variable);
+            element.value = result[variable];
+        });
+    });
+}
+
+ex.addEventListener("click", function(ev){
+
+    chrome.storage.local.get(storedVariables, function(result) {
+        var json = JSON.stringify(result);
+
+        var cfg = new Blob([json], {
+            type: "application/json"
+        });
+        var url = URL.createObjectURL(cfg);
+        var download = document.getElementById('download');
+        download.href = url;
+        download.click();
     });
 });
 
-bg.addEventListener("change", (ev) =>{
-    save({bgImg: ev.target.value});
-});
+im.addEventListener("click", function(ev){
+    var file = document.getElementById('importCfg').files[0];
+    if(!file)
+        return;
 
-opacity.addEventListener("change", (ev) =>{
-    save({opacity: ev.target.value});
-});
+    var reader = new FileReader();
+    reader.onload = function(ev){
+        var cfg = JSON.parse(ev.target.result);
 
-bgColor.addEventListener("change", (ev)=>{
-    save({bgColor: ev.target.value});
-});
+        var shouldParse = true;
 
-hlColor.addEventListener("change", (ev) =>{
-    save({hlColor: ev.target.value});
-});
+        Object.keys(cfg).forEach(key => {
+            if(storedVariables.indexOf(key) == -1){
+                console.log("Invalid Config File");
+                shouldParse = false;
+                return;
+            }
+        });
 
-mainColor.addEventListener("change", (ev)=>{
-    save({mainColor: ev.target.value});
-});
+        if(!shouldParse)
+            return;
 
-textColor.addEventListener("change", (ev)=>{
-    save({textColor: ev.target.value});
-});
-
-headerColor.addEventListener("change", (ev)=>{
-    save({headerColor: ev.target.value});
-});
-
-accent.addEventListener("change", (ev)=>{
-    save({accent: ev.target.value});
-});
-
-accentSecond.addEventListener("change", (ev)=>{
-    save({accentS: ev.target.value});
+        save(cfg, function(){
+            console.log("Imported Config");
+            displayValues();
+        });
+    };
+    reader.readAsText(file);
 });
 
 function save(obj, callback = null){
