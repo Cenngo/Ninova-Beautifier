@@ -2,14 +2,20 @@
 const ex = document.getElementById('export');
 const im = document.getElementById('import');
 
-const storedVariables = ['bgImg', 'opacity', 'bgColor', 'hlColor', 'mainColor', 'textColor', 'headerColor', 'accent', 'accentS'];
-
 window.addEventListener("load", function(window, ev){
+    Log("Installing event listeners.")
     storedVariables.forEach(variable => {
         var element = document.getElementById(variable);
         element.addEventListener("change", function(ev){
+            var selection;
+            if(ev.target.type === 'checkbox'){
+                selection = ev.target.checked;
+            }
+            else{
+                selection = ev.target.value;
+            }
             save({
-                [variable]: ev.target.value
+                [variable]: selection
             });
         });
     });
@@ -18,16 +24,22 @@ window.addEventListener("load", function(window, ev){
 });
 
 function displayValues(){
+    Log("Displaying saved value.");
     chrome.storage.local.get(storedVariables, (result) =>{
         storedVariables.forEach(variable => {
             var element = document.getElementById(variable);
-            element.value = result[variable];
+            if(element.type === 'checkbox'){
+                element.checked = result[variable]
+            }
+            else{
+                element.value = result[variable];
+            }
         });
     });
 }
 
 ex.addEventListener("click", function(ev){
-
+    Log("Exporting config file.")
     chrome.storage.local.get(storedVariables, function(result) {
         var json = JSON.stringify(result);
 
@@ -45,6 +57,7 @@ im.addEventListener("click", function(ev){
     var file = document.getElementById('importCfg').files[0];
     if(!file)
         return;
+    Log("File is valid, importing config.");
 
     var reader = new FileReader();
     reader.onload = function(ev){
@@ -54,7 +67,7 @@ im.addEventListener("click", function(ev){
 
         Object.keys(cfg).forEach(key => {
             if(storedVariables.indexOf(key) == -1){
-                console.log("Invalid Config File");
+                Log("Invalid variable from imported config, skiiping variable.")
                 shouldParse = false;
                 return;
             }
@@ -64,7 +77,7 @@ im.addEventListener("click", function(ev){
             return;
 
         save(cfg, function(){
-            console.log("Imported Config");
+            Log("Successfully imported config file.")
             displayValues();
         });
     };
@@ -72,5 +85,10 @@ im.addEventListener("click", function(ev){
 });
 
 function save(obj, callback = null){
+    Log(`Saving varible.`)
     chrome.storage.local.set(obj, callback);
+}
+
+function Log(message){
+    console.log(`[${extensionName}] - ${message}`)
 }

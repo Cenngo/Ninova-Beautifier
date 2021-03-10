@@ -10,6 +10,7 @@
             margin-top: -6px;
         }
     </style>
+    <script src="../enums.js"></script>
 </head>
 <body>
     <ul style="list-style:none;">
@@ -42,6 +43,10 @@
             <input type="color" id="headerColor">
         </li>
         <li>
+            <label for="lessonColor"><strong>Lesson Color</strong></label>
+            <input type="color" id="lessonColor">
+        </li>
+        <li>
             <label for="accent"><strong>Primary Accent Color</strong></label>
             <input type="color" id="accent">
         </li>
@@ -50,14 +55,26 @@
             <input type="color" id="accentS">
         </li>
         <li>
+            <label for="showLogo"><strong>Show Extensions Logo</strong></label>
+            <input type="checkbox" id="showLogo">
+        </li>
+        <li>
+            <label for="showCaptions"><strong>Show Lesson Names</strong></label>
+            <input type="checkbox" id="showCaptions">
+        </li>
+        <li>
+            <label for="unlockZoom"><strong>Unlock Zoom</strong></label>
+            <input type="checkbox" id="unlockZoom">
+            <i>This unlocks the 'right click' functionality for saved zoom recording page.</i>
+        </li>
+        <li>
             <button id="export">Export</button>
             <a href="/" id="download" hidden download="config.json"></a>
         </li>
         <li>
             <button id="import" name="config">Import</button>
-            <input type="file" style="margin: 2px 0 0 0;" id="importCfg" accept=".json">
+            <input type="file" style="margin: 2px -15px 0 0px;" id="importCfg" accept=".json">
         </li>
     </ul>
-    
-    <script type="module" src="settings.js"></script>
+    <script src="settings.js"></script>
 </body>
