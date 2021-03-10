@@ -1,0 +1,5 @@
+.orta .ic table.data > caption.caption {
+    color: var(--headerColor) !important;
+    background: unset !important;
+    font-size: 13px;
+}

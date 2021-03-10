@@ -1,0 +1,29 @@
+{
+    "bgImg":{
+        "message": "Arkaplan Resmi"
+    },
+    "opacity":{
+        "message": "Sayfa Saydamligi"
+    },
+    "bgColor":{
+        "message": "Arkaplan Rengi"
+    },
+    "hlColor":{
+        "message": "Hyperlink Rengi"
+    },
+    "mainColor":{
+        "message": "Ana Renk"
+    },
+    "textColor":{
+        "message": "Yazi Rengi"
+    },
+    "tHeaderColor":{
+        "message": "Tablo Baslik Rengi"
+    },
+    "accentColor":{
+        "message": "Birincil Renk"
+    },
+    "secondaryAccenColor":{
+        "message": "Ikincil Renk"
+    }
+}

@@ -10,46 +10,71 @@
             margin-top: -6px;
         }
     </style>
+    <script src="../enums.js"></script>
 </head>
 <body>
     <ul style="list-style:none;">
         <li>
-            <strong>Background Image</strong>
+            <label for="bgImg"><strong>Background Image</strong></label>
             <input type="text" id="bgImg">
         </li>
         <li>
-            <strong>Page Opacity</strong>
+            <label for="opacity"><strong>Page Opacity</strong></label>
             <input type="range" min="1" max="100" value="50" id="opacity">
         </li>
         <li>
-            <strong>Page Color</strong>
+            <label for="bgColor"><strong>Page Color</strong></label>
             <input type="color" id="bgColor">
         </li>
         <li>
-            <strong>Hyperlink Color</strong>
+            <label for="hlColor"><strong>Hyperlink Color</strong></label>
             <input type="color" id="hlColor">
         </li>
         <li>
-            <strong>Main Color</strong>
+            <label for="mainColor"><strong>Main Color</strong></label>
             <input type="color" id="mainColor">
         </li>
         <li>
-            <strong>Text Color</strong>
+            <label for="textColor"><strong>Text Color</strong></label>
             <input type="color" id="textColor">
         </li>
         <li>
-            <strong>Table Header Color</strong>
+            <label for="headerColor"><strong>Table Header Color</strong></label>
             <input type="color" id="headerColor">
         </li>
         <li>
-            <strong>Primary Accent Color</strong>
-            <input type="color" id="accentColor">
+            <label for="lessonColor"><strong>Lesson Color</strong></label>
+            <input type="color" id="lessonColor">
         </li>
         <li>
-            <strong>Secondary Accent Color</strong>
-            <input type="color" id="accentSecColor">
+            <label for="accent"><strong>Primary Accent Color</strong></label>
+            <input type="color" id="accent">
+        </li>
+        <li>
+            <label for="accentS"><strong>Secondary Accent Color</strong></label>
+            <input type="color" id="accentS">
+        </li>
+        <li>
+            <label for="showLogo"><strong>Show Extensions Logo</strong></label>
+            <input type="checkbox" id="showLogo">
+        </li>
+        <li>
+            <label for="showCaptions"><strong>Show Lesson Names</strong></label>
+            <input type="checkbox" id="showCaptions">
+        </li>
+        <li>
+            <label for="unlockZoom"><strong>Unlock Zoom</strong></label>
+            <input type="checkbox" id="unlockZoom">
+            <i>This unlocks the 'right click' functionality for saved zoom recording page.</i>
+        </li>
+        <li>
+            <button id="export">Export</button>
+            <a href="/" id="download" hidden download="config.json"></a>
+        </li>
+        <li>
+            <button id="import" name="config">Import</button>
+            <input type="file" style="margin: 2px -15px 0 0px;" id="importCfg" accept=".json">
         </li>
     </ul>
-    
-    <script type="module" src="settings.js"></script>
+    <script src="settings.js"></script>
 </body>
