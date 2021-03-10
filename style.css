@@ -3,6 +3,10 @@
     background: unset !important;
     background-color: unset !important;
 }
+#logo{
+    margin: 30px 0px 0px 60px;
+    height: 64px;
+}
 body{
     background: unset !important;
     background-attachment: fixed !important;
@@ -98,6 +102,9 @@ a.buton:hover{
 .yolAna{
     background: unset !important;
     background-color: rgba(var(--bgR), var(--bgG), var(--bgB), var(--opacity));
+}
+.menuErisimAgaci span, .menuErisimAgaci strong{
+    color: var(--lessonColor) !important;
 }
 #ctl00_ContentPlaceHolder1_gvOdevDosyaTipleri_ctl02_fuUpload{
     border: none !important;
