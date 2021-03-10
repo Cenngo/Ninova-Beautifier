@@ -1,4 +1,3 @@
-const storedVariables = ['bgImg', 'opacity', 'bgColor', 'hlColor', 'mainColor', 'textColor', 'headerColor', 'accent', 'accentS'];
 const style = document.documentElement.style;
 
 chrome.storage.local.get(storedVariables, (result) =>{
@@ -8,12 +7,15 @@ chrome.storage.local.get(storedVariables, (result) =>{
     style.setProperty("--opacity", result.opacity / 100);
 
     storedVariables.forEach(variable => {
-        if(variable === 'bgImg' || variable === 'bgColor' || variable === 'opacity')
+        if(variable === 'bgImg' || variable === 'bgColor' || variable === 'opacity' || variable === 'showLogo' || variable === 'showCaptions' || variable === 'unlockZoom')
             return;
         
         style.setProperty(`--${variable}`, result[variable])
     });
 });
+
+window.addEventListener('load', createLogo);
+window.addEventListener("load", installCaptions);
 
 function setBGColor(hex){
     var r = hex.substring(1,3);
@@ -23,4 +25,27 @@ function setBGColor(hex){
     style.setProperty("--bgR", parseInt(r, 16));
     style.setProperty("--bgG", parseInt(g, 16));
     style.setProperty("--bgB", parseInt(b, 16));
+}
+
+function createLogo(){
+    chrome.storage.local.get(['showLogo'], function(result){
+        if(result.showLogo == true){
+            var tepe = document.getElementsByClassName("tepe")[0];
+            var img = document.createElement('img');
+            img.src = chrome.runtime.getURL("icons/icon128.png");
+            img.id = "logo";
+            tepe.appendChild(img);
+        }
+    });
+}
+
+function installCaptions(){
+    chrome.storage.local.get(['showCaptions'], function(result){
+        if(result.showCaptions == true){
+            console.log(`[${extensionName}] - Creating lesson names.`)
+            var script = document.createElement('script');
+            script.src = chrome.runtime.getURL("captions.js");
+            document.body.appendChild(script);
+        }
+    });
 }
