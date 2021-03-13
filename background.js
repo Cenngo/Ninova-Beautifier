@@ -15,7 +15,7 @@ const defaults = {
     accentS: "#8a2be2",
     showLogo: "true",
     showCaptions: "true",
-    unlockZoom: "true"
+    unlockZoom: "false"
 };
 
 chrome.runtime.onInstalled.addListener(function(details){
