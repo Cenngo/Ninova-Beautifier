@@ -1,80 +1,125 @@
-<!DOCTYPE html>
-<head>
-    <style>
-        li{
-            padding: 10px 0 10px 0;
-            margin: 5px 0 5px 0;
-        }
-        input{
-            float: right;
-            margin-top: -6px;
-        }
-    </style>
-    <script src="../enums.js"></script>
-</head>
-<body>
-    <ul style="list-style:none;">
-        <li>
-            <label for="bgImg"><strong>Background Image</strong></label>
-            <input type="text" id="bgImg">
-        </li>
-        <li>
-            <label for="opacity"><strong>Page Opacity</strong></label>
-            <input type="range" min="1" max="100" value="50" id="opacity">
-        </li>
-        <li>
-            <label for="bgColor"><strong>Page Color</strong></label>
-            <input type="color" id="bgColor">
-        </li>
-        <li>
-            <label for="hlColor"><strong>Hyperlink Color</strong></label>
-            <input type="color" id="hlColor">
-        </li>
-        <li>
-            <label for="mainColor"><strong>Main Color</strong></label>
-            <input type="color" id="mainColor">
-        </li>
-        <li>
-            <label for="textColor"><strong>Text Color</strong></label>
-            <input type="color" id="textColor">
-        </li>
-        <li>
-            <label for="headerColor"><strong>Table Header Color</strong></label>
-            <input type="color" id="headerColor">
-        </li>
-        <li>
-            <label for="lessonColor"><strong>Lesson Color</strong></label>
-            <input type="color" id="lessonColor">
-        </li>
-        <li>
-            <label for="accent"><strong>Primary Accent Color</strong></label>
-            <input type="color" id="accent">
-        </li>
-        <li>
-            <label for="accentS"><strong>Secondary Accent Color</strong></label>
-            <input type="color" id="accentS">
-        </li>
-        <li>
-            <label for="showLogo"><strong>Show Extensions Logo</strong></label>
-            <input type="checkbox" id="showLogo">
-        </li>
-        <li>
-            <label for="showCaptions"><strong>Show Lesson Names</strong></label>
-            <input type="checkbox" id="showCaptions">
-        </li>
-        <li>
-            <label for="unlockZoom"><strong>Unlock Zoom</strong></label>
-            <input type="checkbox" id="unlockZoom">
-            <i>This unlocks the 'right click' functionality for saved zoom recording page.</i>
-        </li>
-        <li>
-            <button id="export">Export</button>
-            <a href="/" id="download" hidden download="config.json"></a>
-        </li>
-        <li>
-            <button id="import" name="config">Import</button>
-            <input type="file" style="margin: 2px -15px 0 0px;" id="importCfg" accept=".json">
-        </li>
-    </ul>
-    <script src="settings.js"></script>
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href="settings.css">
+        <script src="../enums.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <img src="../icons/icon128.png" height="64px">
+            <p class="title">Settings</p>
+        </div>
+        <div class="container">
+            <div class="col">
+                <ul>
+                    <li>
+                        <div class="cell animate">
+                            <label for="bgImg">Background Image</label>
+                        <input type="text" id="bgImg">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="opacity">Page Opacity</label>
+                            <input type="range" min="1" max="100" value="50" id="opacity">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="bgColor">Page Color</label>
+                            <input type="color" id="bgColor">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="hlColor">Hyperlink Color</label>
+                            <input type="color" id="hlColor">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="mainColor">Main Color</label>
+                            <input type="color" id="mainColor">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="textColor">Text Color</label>
+                            <input type="color" id="textColor">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="headerColor">Table Header Color</label>
+                            <input type="color" id="headerColor">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    <li>
+                        <div class="cell animate">
+                            <label for="lessonColor">Lesson Color</label>
+                            <input type="color" id="lessonColor">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="accent">Primary Accent Color</label>
+                            <input type="color" id="accent">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="accentS">Secondary Accent Color</label>
+                            <input type="color" id="accentS">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="showLogo">Show Extensions Logo</label>
+                            <label class="switch">
+                                <input type="checkbox" class="" id="showLogo">
+                                <div class="slider"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="showCaptions">Show Lesson Names</label>
+                            <label class="switch">
+                                <input type="checkbox" class="" id="showCaptions">
+                                <div class="slider"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell animate">
+                            <label for="unlockZoom">Unlock Zoom</label>
+                            <label class="switch">
+                                <input type="checkbox" id="unlockZoom">
+                                <div class="slider"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell">
+                            <button id="export">Export</button>
+                            <a href="/" id="download" hidden download="config.json"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cell" style="display: flex;">
+                            <div class="buttonWrapper">
+                                <button id="import" name="config">Import</button>
+                            </div>
+                            <input type="file" style="align-self: center; margin-left: 2em;" id="importCfg" accept=".json">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <script src="settings.js"></script>
+    </body>
+</html>

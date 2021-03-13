@@ -1,0 +1,230 @@
+body{
+    background-color: #121212;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --elevation: rgba(255, 255, 255, .05);
+    --shadow: 0px 5px 10px 0px black;
+    --primary: #BB86FC;
+    --secondary: #03CAD6;
+    font-size: large;
+}
+*:focus{
+    outline: none;
+}
+p, label, h1, h2, h3, h4, h5, h6{
+    color: white;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+.header{
+    display: flex;
+    align-items: center;
+    margin: 1em;
+}
+.title{
+    letter-spacing: .3em;
+    font-weight: lighter;
+    font-size: xx-large;
+    margin: 1em;
+    width: 50%;
+}
+.container{
+    height: 75%;
+    width: 60%;
+    background-color: var(--elevation);
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: var(--shadow);
+    align-items: center;
+    display: flex;
+}
+
+/* options list cell styling */
+.cell{
+    vertical-align: middle;
+    display: table-cell;
+    padding: 1em;
+    width: 100%;
+    transition: padding 0.2s;
+    align-items: center;
+}
+.cell:hover{
+    background-color: var(--elevation);
+    border-radius: 10px;
+}
+.cell label{
+    vertical-align: middle;
+}
+.cell:hover label{
+    color: var(--primary);
+}
+.cell.animate:hover{
+    padding-left: 2em;
+    transition: padding-left 0.6s;
+}
+
+/* options column styling */
+.col{
+    width: 50%;
+    height: 90%;
+    margin: 1em;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* styling for options list and children inputs */
+ul{
+    list-style: none;
+    display: table;
+    height: 90%;
+    width: 100%;
+    margin-right: 5%;
+    overflow-x: hidden;
+}
+ul>li{
+    margin: 20px;
+    display: table-row;
+    width: 100%;
+    overflow-x: hidden;
+}
+input{
+    float: right;
+}
+
+/* color input style */
+input[type="color"]{
+    width: 3em;
+    height: 3em;
+    border-radius: 1.5em;
+    border: none;
+    border-color: transparent;
+    background-color: transparent;
+}
+input[type="color"]::-webkit-color-swatch{
+    border-radius: 1.5em;
+}
+
+/* file input style */
+input[type="file"]::-webkit-file-upload-button{
+    visibility: hidden;
+    width: 0; height: 0;
+}
+input[type="file"]{
+    height: 100%;
+    vertical-align: middle;
+    align-items: center;
+    display: inline-block;
+    color: white;
+    border: 1px solid var(--elevation);
+    border-radius: 1em;
+}
+input[type="file"]::before{
+    content: "Browse Files";
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    height: 2.5em;
+    width: 7em;
+    text-align: center;
+    background-color: var(--elevation);
+    color: white;
+}
+input[type="file"]:hover::before{
+    background-color: var(--secondary);
+    color: black;
+}
+
+/* range input style */
+input[type="range"]{
+    background-color: transparent;
+    -webkit-appearance: none;
+    border-radius: .5em;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: var(--primary);
+    margin-top: -.2em;
+    height: 1em;
+    width: 1em;
+    border-radius: .5em;
+    cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb::before{
+    content: "";
+    height: .6em;
+    width: 10em;
+    position: sticky;
+    background-color: white;
+}
+input[type="range"]::-webkit-slider-runnable-track{
+    background-color: #121212;
+    height: .6em;
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* text input style */
+input[type="text"]{
+    background-color: #121212;
+    border: none;
+    height: 2.5em;
+    width: 15em;
+    border-radius: 1em;
+    color: white;
+    padding: 0 1em 0 1em;
+}
+input[type="text"]:focus{
+    border: 1px solid white;
+    transition: border .2s;
+}
+
+/* button styling */
+button{
+    background-color: var(--primary);
+    height: 2.5em;
+    width: 7em;
+    border-style: none;
+    border-radius: 2em;
+}
+button:hover{
+    background-color: white;
+}
+
+/* slider style */
+.switch{
+    position: relative;
+    float: right;
+    right: 3em;
+}
+.switch > input{
+    visibility: hidden;
+    width: 0; height: 0;
+}
+.slider{
+    width: 3em;
+    height: 1.5em;
+    background-color:black;
+    border-radius: .7em;
+    cursor: pointer;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transition: .4s;
+}
+.slider::before{
+    content: "";
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: .1em;
+    left: .1em;
+    transition: .4s;
+}
+input:checked + .slider::before{
+    transform: translateX(1.5em);
+}
+input:checked + .slider{
+    background-color: var(--primary);
+}
