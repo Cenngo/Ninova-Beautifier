@@ -13,9 +13,9 @@ const defaults = {
     headerColor: "#ff7f50",
     accent: "#1e90ff",
     accentS: "#8a2be2",
-    showLogo: "true",
-    showCaptions: "true",
-    unlockZoom: "false"
+    showLogo: false,
+    showCaptions: false,
+    unlockZoom: false
 };
 
 chrome.runtime.onInstalled.addListener(function(details){
