@@ -89,6 +89,7 @@ ul>li{
 }
 input{
     float: right;
+    cursor: pointer;
 }
 
 /* color input style */
