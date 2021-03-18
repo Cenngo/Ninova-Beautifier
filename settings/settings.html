@@ -13,8 +13,9 @@
                 <ul>
                     <li>
                         <div class="cell animate">
-                            <label for="bgImg">Background Image</label>
-                        <input type="text" id="bgImg">
+                            <label for="bgImg">Background</label>
+                        <input type="file" id="bgImg" accept="image/*">
+                        <input type="text" style="margin-top: 1em;" id="bgImg"></input>
                         </div>
                     </li>
                     <li>
@@ -59,7 +60,7 @@
                 <ul>
                     <li>
                         <div class="cell animate">
-                            <label for="lessonColor">Lesson Color</label>
+                            <label for="lessonColor">Lecture Name Color</label>
                             <input type="color" id="lessonColor">
                         </div>
                     </li>
@@ -113,13 +114,13 @@
                             <div class="buttonWrapper">
                                 <button id="import" name="config">Import</button>
                             </div>
-                            <input type="file" style="align-self: center; margin-left: 2em;" id="importCfg" accept=".json">
+                            <input type="file" id="importCfg" accept=".json">
                         </div>
                     </li>
                 </ul>
             </div>
             </div>
         </div>
-        <script src="settings.js"></script>
+        <script type="module" src="settings.js"></script>
     </body>
 </html>
