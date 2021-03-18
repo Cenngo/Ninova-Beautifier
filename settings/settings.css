@@ -111,13 +111,15 @@ input[type="file"]::-webkit-file-upload-button{
     width: 0; height: 0;
 }
 input[type="file"]{
-    height: 100%;
+    height: 2.5em;
     vertical-align: middle;
     align-items: center;
     display: inline-block;
     color: white;
     border: 1px solid var(--elevation);
     border-radius: 1em;
+    align-self: center; 
+    margin-left: 2em;
 }
 input[type="file"]::before{
     content: "Browse Files";

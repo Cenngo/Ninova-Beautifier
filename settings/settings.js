@@ -5,29 +5,53 @@ const im = document.getElementById('import');
 window.addEventListener("load", function(window, ev){
     Log("Installing event listeners.")
     storedVariables.forEach(variable => {
-        var element = document.getElementById(variable);
-        element.addEventListener("change", function(ev){
-            var selection;
-            if(ev.target.type === 'checkbox'){
-                selection = ev.target.checked;
-            }
-            else{
-                selection = ev.target.value;
-            }
-            save({
-                [variable]: selection
-            });
-        });
+        var elements = document.querySelectorAll(`#${variable}`);
+        elements.forEach(element => {
+            createChangeListener(element, variable);
+        })
     });
 
     displayValues();
 });
 
+function createChangeListener(element, variable){
+    element.addEventListener("change", function(ev){
+        var selection;
+        if(ev.target.type === 'checkbox'){
+            selection = ev.target.checked;
+            save({
+                [variable]: selection
+            });
+        }
+        else if(ev.target.type === 'file'){
+            var file = ev.target.files[0];
+            var reader = new FileReader();
+            reader.onload = () => {
+                var result = reader.result;
+                save({
+                    [variable]: result
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+        else{
+            selection = ev.target.value;
+            save({
+                [variable]: selection
+            });
+        }
+        Log(`Saving ${variable}`);
+    });
+}
+
 function displayValues(){
     Log("Displaying saved value.");
     chrome.storage.local.get(storedVariables, (result) =>{
         storedVariables.forEach(variable => {
+            if(variable == 'bgImg') return;
+
             var element = document.getElementById(variable);
+
             if(element.type === 'checkbox'){
                 element.checked = result[variable]
             }
