@@ -1,6 +1,8 @@
 'use strict';
 const gettingStarted = "https://github.com/Cenngo/Ninova-Beautifier/wiki/Getting-Started";
 const changeLog = "https://github.com/Cenngo/Ninova-Beautifier/wiki/Change-Log";
+const showChangeLog = false;
+const showGettingStarted = true;
 
 const defaults = {
     bgImg: "https://external-preview.redd.it/sE0hV3Uv1HO_sUtL9JWe1iqJNm7m4T0RtZ3vQQuBilA.jpg?auto=webp&s=da6a6333d3273ddbea5692e473bdac7cdcbd7e28",
@@ -18,18 +20,27 @@ const defaults = {
     unlockZoom: false
 };
 
+chrome.runtime.onUpdateAvailable.addListener(function(details){
+
+});
+
+chrome.runtime.onStartup.addListener(function(){
+
+});
+
 chrome.runtime.onInstalled.addListener(function(details){
     Log("Extension installed, going over initialization routine.");
-    if(details.reason == "install"){
-        injectDefaults();
 
+    injectDefaults();
+
+    if(details.reason == "install" && showGettingStarted){
+        
         chrome.tabs.create({
             active:true,
             url: gettingStarted
         });
     }
-
-    if(details.reason == "update"){
+    else if(details.reason == "update" && showChangeLog){
 
         chrome.tabs.create({
             active:true,
@@ -46,21 +57,6 @@ chrome.runtime.onInstalled.addListener(function(details){
         type: 'normal',
         visible:true
     });
-
-    // chrome.declarativeContent.onPageChanged.removeRules(undefined, function(){
-    //     chrome.declarativeContent.onPageChanged.addRules([
-    //         {
-    //             conditions: [
-    //                 new chrome.declarativeContent.PageStateMatcher({
-    //                     pageUrl: {
-    //                         urlMatches: "https://ninova.itu.edu.tr/*"
-    //                     }
-    //                 })
-    //             ],
-    //             actions: [ new chrome.declarativeContent.ShowPageAction() ]
-    //         }
-    //     ]);
-    // });
 });
 
 chrome.contextMenus.onClicked.addListener(handleContext);
@@ -81,7 +77,7 @@ function handleContext(info, tab){
 
 function handleMessage(message, sender, sendResponse){
     switch (message.id) {
-            
+
         default:
             Log(`Unhandled message: ${sender} ${message}`);
             break;
@@ -89,9 +85,12 @@ function handleMessage(message, sender, sendResponse){
 }
 
 function injectDefaults(){
-    Log("Injecting default settings.")
-    chrome.storage.local.set(defaults, function(){
-        Log("Successfully injected default settings.");
+    chrome.storage.local.get(storedVariables, function(result){
+        Log("Injecting default settings.")
+        chrome.storage.local.set(defaults, function(){
+            Log("Successfully injected default settings.");
+            chrome.storage.local.set(result, function(){});
+        });
     });
 }
 
