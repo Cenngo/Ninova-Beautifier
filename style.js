@@ -1,5 +1,7 @@
 const style = document.documentElement.style;
 
+window.addEventListener('load', onWindowLoad);
+
 chrome.storage.local.get(storedVariables, (result) =>{
 
     style.setProperty("--background", `url(${result.bgImg})`);
@@ -14,8 +16,10 @@ chrome.storage.local.get(storedVariables, (result) =>{
     });
 });
 
-window.addEventListener('load', createLogo);
-window.addEventListener("load", installCaptions);
+function onWindowLoad(){
+    createLogo();
+    installCaptions();
+}
 
 function setBGColor(hex){
     var r = hex.substring(1,3);
