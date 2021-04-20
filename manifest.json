@@ -12,8 +12,8 @@
     },
     "content_scripts": [
         {
-            "css": ["style.css"],
-            "js": ["enums.js","style.js"],
+            "css": ["styles/style.css"],
+            "js": ["enums.js","scripts/style.js"],
             "matches": ["https://ninova.itu.edu.tr/*"],
             "match_about_blank": false,
             "run_at": "document_start",
