@@ -11,3 +11,4 @@ A basic CSS injector for ITU's Ninova.
 
 
 ![preview](https://github.com/Cenngo/Ninova-Beautifier/blob/master/preview.png)
+![image](https://user-images.githubusercontent.com/57065323/115700844-c9f66e80-a36f-11eb-923c-92b6f2bac947.png)
